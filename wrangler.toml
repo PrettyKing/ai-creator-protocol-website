@@ -4,8 +4,8 @@ pages_build_output_dir = "dist"
 
 # 生产环境配置
 [env.production]
-route = "aicp.dev/*"
+# route = "aicp.dev/*"
 
-# 开发环境配置
-[env.development]
-route = "dev.aicp.dev/*"
+# 预览环境配置
+[env.preview]
+# route = "dev.aicp.dev/*"
