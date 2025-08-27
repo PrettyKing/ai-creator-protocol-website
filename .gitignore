@@ -67,3 +67,7 @@ workers-site/
 # MacOS
 .AppleDouble
 .LSOverride
+
+# lockfiles
+package-lock.json
+yarn.lock

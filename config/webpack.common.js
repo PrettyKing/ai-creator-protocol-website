@@ -2,17 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].[contenthash].js',
     clean: true,
     publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico'
+      template: path.resolve(__dirname, '../public/index.html'),
+      favicon: path.resolve(__dirname, '../public/favicon.ico')
     })
   ],
   module: {
@@ -25,6 +25,13 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
+        }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader'
         }
       },
       {
@@ -56,9 +63,9 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, '../src')
     }
   }
 };
