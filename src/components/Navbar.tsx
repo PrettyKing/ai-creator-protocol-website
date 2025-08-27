@@ -16,10 +16,6 @@ const Navbar: React.FC = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="nav-link">功能</a>
-            <a href="#how-it-works" className="nav-link">工作原理</a>
-            <a href="#pricing" className="nav-link">定价</a>
-            <a href="#contact" className="nav-link">联系</a>
             <a href="https://app.faithcal.com" target="_blank" rel="noopener noreferrer" className="btn-primary">LUNCH APP</a>
           </div>
 

@@ -1,1 +1,225 @@
-@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base {\n  html {\n    scroll-behavior: smooth;\n  }\n  \n  body {\n    @apply font-sans antialiased bg-slate-900 text-white;\n  }\n}\n\n@layer components {\n  .btn-primary {\n    @apply bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:scale-105;\n  }\n  \n  .btn-secondary {\n    @apply bg-slate-800/50 backdrop-blur-sm hover:bg-slate-700/50 text-blue-300 hover:text-white px-6 py-3 rounded-lg font-medium border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300;\n  }\n  \n  .section-padding {\n    @apply px-4 sm:px-6 lg:px-8;\n  }\n  \n  .container-width {\n    @apply max-w-7xl mx-auto;\n  }\n  \n  .gradient-text {\n    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent;\n  }\n  \n  .card-hover {\n    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105;\n  }\n  \n  .glow-blue {\n    @apply shadow-lg shadow-blue-500/25;\n  }\n  \n  .glow-cyan {\n    @apply shadow-lg shadow-cyan-500/25;\n  }\n  \n  .glow-purple {\n    @apply shadow-lg shadow-purple-500/25;\n  }\n}\n\n@layer utilities {\n  .text-shadow {\n    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);\n  }\n  \n  .border-glow {\n    border: 1px solid rgba(59, 130, 246, 0.3);\n    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);\n  }\n}\n\n/* Custom animations */\n@keyframes float {\n  0%, 100% {\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-10px);\n  }\n}\n\n@keyframes grid-move {\n  0% {\n    transform: translate(0, 0);\n  }\n  100% {\n    transform: translate(80px, 80px);\n  }\n}\n\n@keyframes pulse-glow {\n  0%, 100% {\n    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);\n  }\n  50% {\n    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);\n  }\n}\n\n@keyframes rotate-slow {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes slide-up {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n@keyframes fade-in {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n\n@keyframes neon-pulse {\n  0%, 100% {\n    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);\n  }\n  50% {\n    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.5), 0 0 30px rgba(59, 130, 246, 0.3);\n  }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n.animate-grid-move {\n  animation: grid-move 20s linear infinite;\n}\n\n.animate-pulse-glow {\n  animation: pulse-glow 2s ease-in-out infinite;\n}\n\n.animate-rotate-slow {\n  animation: rotate-slow 20s linear infinite;\n}\n\n.animate-slide-up {\n  animation: slide-up 0.6s ease-out;\n}\n\n.animate-fade-in {\n  animation: fade-in 1s ease-out;\n}\n\n.animate-neon-pulse {\n  animation: neon-pulse 2s ease-in-out infinite;\n}\n\n/* Scrollbar styling */\n::-webkit-scrollbar {\n  width: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: rgba(15, 23, 42, 0.5);\n}\n\n::-webkit-scrollbar-thumb {\n  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), rgba(6, 182, 212, 0.5));\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.8), rgba(6, 182, 212, 0.8));\n}\n\n/* Selection styling */\n::selection {\n  background: rgba(59, 130, 246, 0.3);\n  color: white;\n}\n\n::-moz-selection {\n  background: rgba(59, 130, 246, 0.3);\n  color: white;\n}\n\n/* Focus styles */\n.focus-visible {\n  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900;\n}\n\n/* Hover effects for interactive elements */\n.interactive-hover {\n  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;\n}\n\n/* Glass morphism effect */\n.glass-morphism {\n  background: rgba(15, 23, 42, 0.7);\n  backdrop-filter: blur(10px);\n  border: 1px solid rgba(59, 130, 246, 0.2);\n}\n\n/* Cyberpunk grid overlay */\n.cyber-grid {\n  background-image: \n    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),\n    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);\n  background-size: 50px 50px;\n}\n\n/* Neon border effect */\n.neon-border {\n  border: 1px solid rgba(59, 130, 246, 0.5);\n  box-shadow: \n    0 0 10px rgba(59, 130, 246, 0.3),\n    inset 0 0 10px rgba(59, 130, 246, 0.1);\n}\n\n.neon-border:hover {\n  border-color: rgba(59, 130, 246, 0.8);\n  box-shadow: \n    0 0 20px rgba(59, 130, 246, 0.5),\n    inset 0 0 20px rgba(59, 130, 246, 0.2);\n}"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-slate-900 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-800/50 backdrop-blur-sm hover:bg-slate-700/50 text-blue-300 hover:text-white px-6 py-3 rounded-lg font-medium border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105;
+  }
+  
+  .glow-blue {
+    @apply shadow-lg shadow-blue-500/25;
+  }
+  
+  .glow-cyan {
+    @apply shadow-lg shadow-cyan-500/25;
+  }
+  
+  .glow-purple {
+    @apply shadow-lg shadow-purple-500/25;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .border-glow {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 80px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.5), 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), rgba(6, 182, 212, 0.5));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.8), rgba(6, 182, 212, 0.8));
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+.focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900;
+}
+
+/* Hover effects for interactive elements */
+.interactive-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+/* Glass morphism effect */
+.glass-morphism {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Cyberpunk grid overlay */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Neon border effect */
+.neon-border {
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.3),
+    inset 0 0 10px rgba(59, 130, 246, 0.1);
+}
+
+.neon-border:hover {
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.5),
+    inset 0 0 20px rgba(59, 130, 246, 0.2);
+}
