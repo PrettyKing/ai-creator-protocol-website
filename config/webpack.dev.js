@@ -7,8 +7,7 @@ module.exports = merge(common, {
   devServer: {
     static: '../dist',
     hot: true,
-    open: true,
-    port: 3001,
+    port: 3000,
     historyApiFallback: true
   }
 });

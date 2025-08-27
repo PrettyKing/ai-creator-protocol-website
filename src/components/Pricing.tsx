@@ -110,15 +110,30 @@ const Pricing = () => {
               </ul>
 
               {/* CTA button */}
-              <button
-                className={`w-full py-4 px-6 rounded-lg font-medium transition-colors duration-200 ${
-                  plan.popular
-                    ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                }`}
-              >
-                {plan.cta}
-              </button>
+              {plan.cta === '开始使用' ? (
+                <a
+                  href="https://app.faithcal.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-4 px-6 rounded-lg font-medium transition-colors duration-200 text-center block ${
+                    plan.popular
+                      ? 'bg-primary-600 hover:bg-primary-700 text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <button
+                  className={`w-full py-4 px-6 rounded-lg font-medium transition-colors duration-200 ${
+                    plan.popular
+                      ? 'bg-primary-600 hover:bg-primary-700 text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              )}
             </div>
           ))}
         </div>

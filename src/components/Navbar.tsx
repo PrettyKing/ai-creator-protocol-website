@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
             <a href="#how-it-works" className="nav-link">工作原理</a>
             <a href="#pricing" className="nav-link">定价</a>
             <a href="#contact" className="nav-link">联系</a>
-            <button className="btn-primary">LUNCH APP</button>
+            <a href="https://app.faithcal.com" target="_blank" rel="noopener noreferrer" className="btn-primary">LUNCH APP</a>
           </div>
 
           {/* Mobile menu button */}
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
               <a href="#how-it-works" className="nav-link">工作原理</a>
               <a href="#pricing" className="nav-link">定价</a>
               <a href="#contact" className="nav-link">联系</a>
-              <button className="btn-primary w-full">LUNCH APP</button>
+              <a href="https://app.faithcal.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">LUNCH APP</a>
             </div>
           </div>
         )}
