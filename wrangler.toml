@@ -1,0 +1,11 @@
+name = "ai-creator-protocol-website"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+# 生产环境配置
+[env.production]
+route = "aicp.dev/*"
+
+# 开发环境配置
+[env.development]
+route = "dev.aicp.dev/*"
