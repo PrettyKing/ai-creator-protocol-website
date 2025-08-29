@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
+import ModelViewer from './ModelViewer';
 
 const Hero: React.FC = () => {
   return (
@@ -39,6 +40,27 @@ const Hero: React.FC = () => {
           
           {/* Right content */}
           <div className="relative floating">
+            {/* 3D Model Section */}
+            <div className="relative z-10 card-glass p-8 card-glow mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <div className="text-sm font-medium text-gray-200">AI Avatar 展示</div>
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
+              </div>
+              
+              {/* 3D Model Viewer */}
+              <div className="bg-black/20 rounded-lg border border-primary-500/30 overflow-hidden">
+                <ModelViewer />
+              </div>
+              
+              <div className="mt-4 text-center">
+                <p className="text-sm text-gray-400">拖动旋转 · 滚轮缩放</p>
+              </div>
+            </div>
+
             <div className="relative z-10 card-glass p-8 card-glow">
               <div className="flex items-center justify-between mb-6">
                 <div className="text-sm font-medium text-gray-200">版权保护仪表板</div>

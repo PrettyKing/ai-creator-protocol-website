@@ -5,7 +5,15 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: '../dist',
+    static: [
+      {
+        directory: '../dist'
+      },
+      {
+        directory: '../public',
+        publicPath: '/'
+      }
+    ],
     hot: true,
     port: 3000,
     historyApiFallback: true
